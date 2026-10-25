@@ -5,17 +5,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#111;--mute:#6b6b6b;--line:#e7e7e7;--soft:#f6f6f6;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--gx:clamp(.75rem,1.8vw,2.5rem);--ink:#111;--mute:#6b6b6b;--line:#e7e7e7;--soft:#f6f6f6;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{font-size:clamp(17px,.5vw + 12px,21px);scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
 *{box-sizing:border-box;margin:0}
 body{background:#fff;color:var(--ink);font:400 1.1rem/1.7 DM Sans,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:30}
 img{display:block;max-width:100%}
 h1,h2,h3{font-family:Plus Jakarta Sans,system-ui,sans-serif;font-weight:600;line-height:1.1;letter-spacing:-.03em}
-h1{font-size:clamp(2.6rem,6.5vw,5.6rem);line-height:1.03;letter-spacing:-.045em;font-weight:700}h2{font-size:clamp(2rem,4vw,3.1rem)}h3{font-size:1.3rem}
+h1{font-size:clamp(2.8rem,7.5vw,9rem);line-height:1.03;letter-spacing:-.045em;font-weight:700}h2{font-size:clamp(2rem,4vw,3.1rem)}h3{font-size:1.3rem}
 p{max-width:60ch;text-wrap:pretty}h1,h2,h3{text-wrap:balance}*{-webkit-tap-highlight-color:transparent}a,button{touch-action:manipulation}a{color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid #111;outline-offset:3px}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;align-items:center;gap:1rem;padding:.8rem clamp(1.25rem,4.5vw,6rem);background:#fffffff0;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;display:flex;align-items:center;gap:1rem;padding:.8rem var(--gx);background:#fffffff0;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .logo{display:flex;align-items:center;gap:.7rem;font:700 1.35rem Plus Jakarta Sans,sans-serif;text-decoration:none;margin-right:auto}
 .lg{width:52px;height:52px;border-radius:50%;flex:none}
 nav{display:flex;gap:.2rem;overflow-x:auto}
@@ -24,10 +24,10 @@ nav a:hover,nav a.on{background:var(--soft)}nav a.on{font-weight:700}
 .btn{display:inline-block;background:#111;color:#fff;padding:.85rem 1.6rem;border-radius:99px;font:600 1rem DM Sans,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,background .2s}
 .btn:hover{transform:translateY(-2px);background:#333}.btn.sm{padding:.5rem 1.15rem;font-size:1rem}
 .btn.ghost{background:#fff;color:#111;box-shadow:inset 0 0 0 1.5px #111}
-.wrap{padding:clamp(4rem,10vw,8rem) clamp(1.25rem,4.5vw,6rem);max-width:none;margin:auto}
+.wrap{padding:clamp(4rem,10vw,8rem) var(--gx);max-width:none;margin:auto}
 .soft{background:var(--soft)}
-.hero{padding-top:clamp(2rem,5vw,4rem);padding-bottom:clamp(3rem,6vw,5rem)}.hero h1{max-width:14ch}.hero p{margin:1.4rem 0 2rem;font-size:1.2rem;color:var(--mute)}
-.band{position:relative;margin-inline:calc(-1 * clamp(1.25rem,4.5vw,6rem));aspect-ratio:21/9;border-radius:0;margin-top:3.5rem;overflow:hidden;background:#eee}
+.hero{padding-top:clamp(2rem,5vw,4rem);padding-bottom:clamp(3rem,6vw,5rem)}.hero h1{max-width:none}.hero p{margin:1.4rem 0 2rem;font-size:1.2rem;color:var(--mute)}
+.band{position:relative;margin-inline:calc(-1 * var(--gx));aspect-ratio:21/9;border-radius:0;margin-top:3.5rem;overflow:hidden;background:#eee}
 .band img,.band canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}.w>span{display:inline-block}
 #pg{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:3px;background:#111;transform:scaleX(0);transform-origin:0 50%;z-index:50;pointer-events:none}
@@ -79,11 +79,11 @@ input,select,textarea{font:inherit;padding:.75rem .9rem;border:1.5px solid var(-
 .err{color:#c0392b;font-size:1rem;min-height:1.1em;font-weight:400}
 .r2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .ok{background:var(--soft);border:1px solid var(--line);padding:2rem;border-radius:20px;max-width:36rem;animation:open .4s}
-footer{border-top:1px solid var(--line);padding:3rem clamp(1.25rem,4.5vw,6rem);display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;font-size:1rem}
+footer{border-top:1px solid var(--line);padding:3rem var(--gx);display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;font-size:1rem}
 footer a{display:block;text-decoration:none;padding:.15rem 0;color:var(--mute)}footer a:hover{color:#111}
 ::selection{background:#111;color:#fff}
 .hero .top{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem 4rem;flex-wrap:wrap}
-.hero .side{max-width:380px}.hero .side p{margin:0 0 1.5rem;font-size:1.1rem}
+.hero .side{max-width:32rem}.hero .side p{margin:0 0 1.5rem;font-size:1.1rem}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
 .facts b{display:block;font:600 1.05rem Plus Jakarta Sans,sans-serif}.facts span{color:var(--mute);font-size:1rem}
 .mq{overflow:hidden;border-block:1px solid var(--line);padding:1.2rem 0;white-space:nowrap}
@@ -110,26 +110,74 @@ footer a{display:block;text-decoration:none;padding:.15rem 0;color:var(--mute)}f
 @media(max-width:1000px){.mb{display:grid;align-content:center;justify-items:center}nav{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;padding:.5rem 1rem 1.2rem;display:none;overflow:visible}nav.open{display:flex}nav a{font:600 1.2rem Plus Jakarta Sans,sans-serif;padding:.6rem 1rem;min-height:44px;display:flex;align-items:center}header{gap:.5rem}header .lg{width:40px;height:40px}.logo{font-size:1.2rem}.wrap{padding-block:3rem}.hero{padding-block:1.5rem 3rem}.stage{order:-1}.stage img{aspect-ratio:16/10}.cmp{aspect-ratio:1/1}.mq div{font-size:1.2rem}.btn,.chip,.tog button{min-height:44px;display:inline-flex;align-items:center;justify-content:center}.row{padding:1rem 0}#nl input,input,select{font-size:1rem}}
 @media(max-width:420px){.r2{grid-template-columns:1fr}.tier{padding:1.5rem}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+:root{--ice:#a8dcec}
+.bn{background:#111;color:#fff;text-align:center;font-size:.9rem;padding:.6rem var(--gx);line-height:1.4}
+.bn a{color:#fff;font-weight:600;text-underline-offset:3px}
+.lg{width:40px;height:40px}header{padding:.6rem var(--gx)}.logo{font-size:1.25rem}
+.club,.ph,.loc img,.cmp,.stage img,.cat{border-radius:14px}
+.hero2{position:relative;color:#fff;min-height:min(48rem,92vh);display:flex;align-items:flex-end;overflow:hidden;background:#222}
+.hero2>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero2::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000d 0,#0007 45%,#0003 100%)}
+.hi{position:relative;z-index:2;width:100%;padding:clamp(4rem,10vw,7rem) var(--gx) clamp(1.5rem,4vw,3rem);display:grid;gap:1.6rem}
+.hero2 h1{max-width:13ch;font-size:clamp(2.8rem,7vw,6.5rem)}
+.hero2 .sub{font-size:1.2rem;max-width:34rem;color:#fffe}
+.ticks{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem 1.8rem;font-weight:500}
+.ticks li::before{content:"\2713";color:var(--ice);margin-right:.55rem;font-weight:700}
+.qb{display:grid;grid-template-columns:1fr 1fr auto;gap:.6rem;align-items:end;background:#fff;color:var(--ink);padding:.7rem;border-radius:18px;max-width:46rem}
+.qb label{font-size:.85rem;color:var(--mute);padding:.2rem .5rem 0}
+.qb select{border:0;background:none;padding:.2rem 0 .4rem;font-weight:600;color:var(--ink);width:100%}
+.qb .btn{min-height:3.2rem}
+.sh p{margin-top:.6rem}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem}
+.cat{position:relative;aspect-ratio:3/4;overflow:hidden;color:#fff;text-decoration:none;display:flex;align-items:flex-end;padding:1.2rem}
+.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}.cat:hover img{transform:scale(1.05)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000c,#0000 62%)}
+.cat span{position:relative;z-index:2}.cat b{display:block;font:600 1.4rem Plus Jakarta Sans,sans-serif;letter-spacing:-.02em}.cat small{display:block;font-size:1rem;opacity:.9;margin-top:.2rem;line-height:1.4}
+.steps>div{background:var(--soft);border:0;border-radius:16px;padding:1.8rem}
+.steps small{font:700 2.6rem/1 Plus Jakarta Sans,sans-serif;color:#111;margin-bottom:1.2rem}
+#why{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem}
+#why>div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.8rem}#why p{margin-top:.5rem}
+.cta{position:relative;color:#fff;min-height:30rem;display:grid;align-items:center;padding:4rem var(--gx);overflow:hidden;background:#222}
+.cta>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000c,#0002 80%)}
+.cta>div{position:relative;z-index:2;max-width:34rem}.cta p{margin:1rem 0 1.8rem;color:#fffe}
+.cta .btn{background:#fff;color:#111}.cta .btn:hover{background:#eee}
+.hero2 :focus-visible,.cta :focus-visible,footer :focus-visible{outline-color:#fff}.qb :focus-visible{outline-color:#111}
+footer{background:#111;color:#fff;border:0;padding:4rem var(--gx) 2rem;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.4fr;gap:2.5rem}
+footer a,footer .mute{color:#fffa}footer a:hover{color:#fff}footer strong{display:block;margin-bottom:.6rem}
+footer .fine{grid-column:1/-1;border-top:1px solid #fff3;color:#fffa}
+footer #nl input{background:#fff1;border-color:#fff4;color:#fff}footer .btn{background:#fff;color:#111}footer .err{color:#ffb4a8}
+@media(max-width:1000px){.cats{grid-template-columns:1fr 1fr}#why{grid-template-columns:1fr}.qb{grid-template-columns:1fr}footer{grid-template-columns:1fr 1fr}.hero2{min-height:40rem}.cta{min-height:24rem}#vals{grid-template-columns:1fr!important}}
+@media(max-width:520px){.cats{grid-template-columns:1fr}.cat{aspect-ratio:4/3}footer{grid-template-columns:1fr}}
 </style><meta name="description" content="Temomi is a social wellness club with private ice baths, saunas, red light beds and recovery rooms you can book alone or with friends."><meta name="robots" content="index,follow"><meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website"><meta property="og:site_name" content="Temomi"><meta property="og:title" content="Temomi | Social Wellness Club"><meta property="og:description" content="Temomi is a social wellness club with private ice baths, saunas, red light beds and recovery rooms you can book alone or with friends."><meta name="twitter:card" content="summary">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "Temomi", "description": "Temomi is a social wellness club with private ice baths, saunas, red light beds and recovery rooms.", "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Guided ice bath"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Sauna suite"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Contrast suite"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Red light bed"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lymphatic compression"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hyperbaric chamber"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Acupuncture"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Vitamin IV lounge"}}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I bring friends?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every room is private and fits you plus up to five guests, depending on the remedy."}}, {"@type": "Question", "name": "Do I need experience with ice baths?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your coach guides your breathing and you can leave the water whenever you like."}}, {"@type": "Question", "name": "How far ahead can I book?", "acceptedAnswer": {"@type": "Answer", "text": "Seven days as a drop-in, 14 on Regular and 30 on Inner Circle."}}, {"@type": "Question", "name": "Can I change or cancel my plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Switch or cancel any month before your next billing date."}}]}]}</script>
 </head><body><div id="pg"></div>
+<div class="bn">Bringing a group? Private suites fit up to six. <a href="#book" data-go="book" data-remedy="Foam Bath Party">Plan a group visit</a></div>
 <header><a class="logo" href="#home" data-go="home"><img class="lg" data-i="9" alt="">Temomi</a>
 <nav id="nav" aria-label="Main"><a href="#home" data-go="home">Home</a><a href="#locations" data-go="locations">Clubs</a><a href="#remedies" data-go="remedies">Remedies</a><a href="#membership" data-go="membership">Memberships</a><a href="#about" data-go="about">About</a></nav>
-<a class="btn sm" href="#book" data-go="book">Book</a><button class="mb" id="mb" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button></header>
+<a class="btn sm" href="#book" data-go="book">Book now</a><button class="mb" id="mb" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button></header>
 <noscript><p style="padding:2rem">Temomi is a social wellness club offering guided ice baths, sauna suites, red light therapy, hyperbaric chambers and recovery rooms at three clubs: Old Town, Skyline and Parkside. Please enable JavaScript to browse remedies, compare memberships and book.</p></noscript>
 
 <main id="home">
-<section class="wrap hero"><div class="top"><h1>Feel better with the people you love.</h1><div class="side"><p>Temomi is a social wellness club: ice baths, saunas, red light and recovery rooms you book for yourself or your whole group.</p><a class="btn" href="#book" data-go="book">Book a remedy</a> <a class="btn ghost" href="#membership" data-go="membership">See memberships</a></div></div><div class="band"><img data-i="1" alt="Friends in robes laughing over tea at a long travertine table in the club lounge"></div><div class="facts"><div><b>Private rooms</b><span>For one, or up to six friends.</span></div><div><b>Trained practitioners</b><span>Every remedy is guided, never rushed.</span></div><div><b>Pay per visit or join</b><span>Plans that fit how often you come.</span></div></div></section>
-<div class="mq" aria-hidden="true"><div id="mq"></div></div>
-<section class="wrap two"><h2>Not a spa. Not a gym. A place to see your friends.</h2><div><p>Most self-care happens alone. We built rooms where you can plunge, sweat and recover side by side, then sit down for tea afterwards.</p><p class="mute">Every remedy is led by trained practitioners and designed around how long it takes to leave feeling different, not how many appointments we can fit in.</p></div></section>
-<section class="wrap"><div class="sh"><h2>Signature remedies</h2><a class="btn ghost sm" href="#remedies" data-go="remedies">All remedies</a></div><div class="sig"><a class="sc" href="#remedies" data-go="remedies"><div class="ph"><img data-i="6" alt="Guided ice bath"></div><h3>Guided ice bath</h3><p class="mute">Breathwork first, then up to six minutes in the cold with a coach beside you.</p></a><a class="sc" href="#remedies" data-go="remedies"><div class="ph"><img data-i="2" alt="Contrast suite"></div><h3>Contrast suite</h3><p class="mute">A guided rotation between the plunge pool and the cedar sauna.</p></a><a class="sc" href="#remedies" data-go="remedies"><div class="ph"><img data-i="7" alt="Red light bed"></div><h3>Red light bed</h3><p class="mute">Thirty quiet minutes under warm red light, in a room of your own.</p></a></div></section>
+<section class="hero2"><img data-i="1" alt="Friends in robes laughing over tea at a long travertine table in the club lounge"><div class="hi"><h1>Feel better with the people you love.</h1>
+<p class="sub">Ice baths, saunas, red light and recovery rooms you book for yourself or your whole group.</p>
+<ul class="ticks"><li>Private rooms for one to six friends</li><li>Led by trained practitioners</li><li>Book online in minutes</li></ul>
+<div class="qb"><label>Club<select id="hc"></select></label><label>Remedy<select id="hr"></select></label><a class="btn" id="hb" href="#book" data-go="book">Book now</a></div></div></section>
+<section class="wrap"><div class="sh"><div><h2>Find your kind of reset.</h2><p class="mute">Pick a type of remedy to see every room.</p></div><a class="btn ghost sm" href="#remedies" data-go="remedies">All remedies</a></div>
+<div class="cats"><a class="cat" href="#remedies" data-go="remedies" data-cat="cold"><img data-i="6" alt="Guided ice bath"><span><b>Cold</b><small>Ice baths and contrast suites</small></span></a>
+<a class="cat" href="#remedies" data-go="remedies" data-cat="heat"><img data-i="2" alt="Plunge pool beside a cedar sauna"><span><b>Heat</b><small>Private infrared sauna suites</small></span></a>
+<a class="cat" href="#remedies" data-go="remedies" data-cat="rec"><img data-i="7" alt="Red light bed in a warm room"><span><b>Recovery</b><small>Red light, compression and hyperbaric</small></span></a>
+<a class="cat" href="#remedies" data-go="remedies" data-cat="soc"><img data-i="8" alt="Friends toasting with tea"><span><b>Social</b><small>Foam baths and IV lounges for groups</small></span></a></div></section>
+<section class="wrap two" style="padding-top:0"><h2>Not a spa. Not a gym. A place to see your friends.</h2><div><p>Most self-care happens alone. We built rooms where you can plunge, sweat and recover side by side, then sit down for tea afterwards.</p><p class="mute">Every remedy is led by trained practitioners and designed around how long it takes to leave feeling different, not how many appointments we can fit in.</p></div></section>
+<section class="wrap" style="padding-top:0"><h2>How a visit works.</h2><div class="steps"><div><small>1</small><h3>Pick a remedy</h3><p class="mute">Choose a room, then reserve it for yourself or your group.</p></div><div><small>2</small><h3>Settle in</h3><p class="mute">A host shows you around and your practitioner takes over.</p></div><div><small>3</small><h3>Stay for tea</h3><p class="mute">Linger in the lounge afterwards. That is half the point.</p></div></div></section>
 <section class="soft"><div class="wrap"><h2>Choose your side of the day.</h2><p class="mute" style="margin-top:.8rem">Drag the divider between a cold plunge and a red light bed.</p>
 <div class="cmp"><img data-i="6" alt="Guided ice bath session"><img id="warm" data-i="7" alt="Red light bed in a warm room"><input id="rng" type="range" min="0" max="100" value="50" aria-label="Compare cold plunge and red light bed"><div class="bar" id="bar"></div><span class="tag" style="left:1rem">Cold</span><span class="tag" style="right:1rem">Warm</span></div>
 <div class="cap"><p id="capt"></p><a class="btn sm" id="capb" href="#book" data-go="book">Reserve</a></div></div></section>
-<section class="wrap"><h2>How a visit works.</h2><div class="steps"><div><small>1</small><h3>Pick a remedy</h3><p class="mute">Choose a room, then reserve it for yourself or your group.</p></div><div><small>2</small><h3>Settle in</h3><p class="mute">A host shows you around and your practitioner takes over.</p></div><div><small>3</small><h3>Stay for tea</h3><p class="mute">Linger in the lounge afterwards. That is half the point.</p></div></div></section>
-<section class="wrap" style="padding-top:0"><div class="sh"><h2>Three clubs, one standard.</h2><a class="btn ghost sm" href="#locations" data-go="locations">All clubs</a></div><div class="clubs" id="clubs"></div></section>
-<section class="wrap two"><img data-i="8" alt="Friends toasting with tea by candlelight" style="border-radius:6px;width:100%"><div><h2>Bring your people.</h2><p class="mute" style="margin:1rem 0 1.8rem">Book a private suite for up to six and make it your next night out.</p><a class="btn" href="#book" data-go="book" data-remedy="Foam Bath Party">Plan a group visit</a></div></section>
+<section class="wrap"><div class="sh"><h2>Three clubs, one standard.</h2><a class="btn ghost sm" href="#locations" data-go="locations">All clubs</a></div><div class="clubs" id="clubs"></div></section>
+<section class="soft"><div class="wrap"><h2>Why Temomi.</h2><div id="why"></div></div></section>
+<section class="cta"><img data-i="8" alt="Friends toasting with tea by candlelight"><div><h2>Bring your people.</h2><p>Book a private suite for up to six and make it your next night out.</p><a class="btn" href="#book" data-go="book" data-remedy="Foam Bath Party">Plan a group visit</a></div></section>
 </main>
 
 <main id="locations" hidden><div class="wrap"><h1>Our clubs</h1><p class="mute" style="margin:1rem 0 4rem">Each club has the same core rooms, with its own personality.</p><div id="locs"></div></div></main>
@@ -152,7 +200,11 @@ footer a{display:block;text-decoration:none;padding:.15rem 0;color:var(--mute)}f
 <button class="btn" type="submit">Reserve</button></form><div class="ok" id="ok" hidden></div></div>
 <img data-i="5" alt="Reception desk in front of a living plant wall" style="border-radius:4px;width:100%"></div></main>
 
-<footer><div><img class="lg" data-i="9" alt="Temomi logo" style="margin-bottom:.7rem"><strong style="font:700 1.3rem Plus Jakarta Sans,sans-serif;display:block">Temomi</strong><p class="mute">Social wellness club</p></div><div><a href="#locations" data-go="locations">Clubs</a><a href="#remedies" data-go="remedies">Remedies</a><a href="#membership" data-go="membership">Memberships</a></div><div><a href="#about" data-go="about">About</a><a href="#book" data-go="book">Book</a></div><div><strong style="font:600 1rem Plus Jakarta Sans,sans-serif">Stay in the loop</strong><form id="nl" novalidate><input type="email" placeholder="Email address" aria-label="Email address"><button class="btn sm">Subscribe</button></form><p id="nlm" class="err"></p></div><div class="fine">© 2026 Temomi. All rights reserved.</div></footer>
+<footer><div><img class="lg" data-i="9" alt="Temomi logo" style="margin-bottom:.8rem"><strong style="font:700 1.3rem Plus Jakarta Sans,sans-serif">Temomi</strong><p class="mute">A social wellness club with three clubs: Old Town, Skyline and Parkside.</p></div>
+<div><strong>Explore</strong><a href="#locations" data-go="locations">Clubs</a><a href="#remedies" data-go="remedies">Remedies</a><a href="#membership" data-go="membership">Memberships</a></div>
+<div><strong>Temomi</strong><a href="#about" data-go="about">About</a><a href="#membership" data-go="membership">Questions</a><a href="#book" data-go="book">Book a remedy</a></div>
+<div><strong>Stay in the loop</strong><form id="nl" novalidate><input type="email" placeholder="Email address" aria-label="Email address"><button class="btn sm">Subscribe</button></form><p id="nlm" class="err"></p></div>
+<div class="fine">© 2026 Temomi. All rights reserved.</div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -170,7 +222,7 @@ function go(p){if(!P.includes(p))p='home';const el=document.getElementById(p),ol
 const sw=()=>{P.forEach(x=>document.getElementById(x).hidden=x!==p);document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',a.dataset.go===p));scrollTo({top:0,behavior:'instant'});cur=p;seo(p);enter(el);if(!RM)ScrollTrigger.refresh()};
 if(!old||old===el||RM)return sw();
 gsap.to(old,{opacity:0,y:-16,duration:.25,ease:'power2.in',onComplete:()=>{gsap.set(old,{clearProps:'opacity,transform'});sw()}})}
-document.addEventListener('click',e=>{const t=e.target.closest('[data-go]');if(!t)return;e.preventDefault();go(t.dataset.go);if(t.dataset.club)$('#club').value=t.dataset.club;if(t.dataset.remedy)$('#rem').value=t.dataset.remedy});
+document.addEventListener('click',e=>{const t=e.target.closest('[data-go]');if(!t)return;e.preventDefault();go(t.dataset.go);if(t.dataset.club)$('#club').value=t.dataset.club;if(t.dataset.remedy)$('#rem').value=t.dataset.remedy;if(t.dataset.cat){cat=t.dataset.cat;document.querySelectorAll('#chips .chip').forEach(x=>x.setAttribute('aria-pressed',x.dataset.c===cat));draw()}});
 $('#clubs').innerHTML=C.map(c=>`<a class="club" href="#locations" data-go="locations"><img src="${IMG[c.i]}" alt="${c.n} club"><span><h3>${c.n}</h3><small>${c.f.join(", ")}</small></span></a>`).join('');
 $('#locs').innerHTML=C.map(c=>`<article class="loc"><div class="pic"><img src="${IMG[c.i]}" alt="${c.n} club"></div><div><h2>${c.n}</h2><p class="mute" style="margin-top:.8rem">${c.t}</p><div class="chips">${c.f.map(x=>`<span class="chip">${x}</span>`).join('')}</div><a class="btn" href="#book" data-go="book" data-club="${c.n}">Book at ${c.n}</a></div></article>`).join('');
 $('#vals').innerHTML=V.map(v=>`<div><h2 style="font-size:1.5rem">${v[0]}</h2><p class="mute" style="margin-top:.6rem">${v[1]}</p></div>`).join('');
@@ -198,13 +250,12 @@ set('dt',$('#dt').value&&$('#dt').value>=$('#dt').min?'':'Pick a date from today
 if(bad)return;const d=new Date($('#dt').value+'T12:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
 $('#f').hidden=true;const o=$('#ok');o.hidden=false;o.innerHTML=`<h3>Reserved</h3><p style="margin:.8rem 0 1.4rem">${$('#rem').value} at ${$('#club').value}, ${d}, for ${$('#gs').value}. We’ll email ${$('#em').value} to confirm.</p><button class="btn" id="again">Book another</button>`;$('#again').onclick=()=>{o.hidden=true;$('#f').hidden=false;$('#f').reset();$('#gs').value=2}};
 
-const mh=R.map(r=>`<span>${r[0]}</span>`).join('');$('#mq').innerHTML=`<div>${mh}${mh}</div>`.slice(5,-6);
 $('#nl').onsubmit=e=>{e.preventDefault();const ok=/^\S+@\S+\.\S+$/.test(e.target.elements[0].value);$('#nlm').className=ok?'mute':'err';$('#nlm').textContent=ok?'You’re on the list.':'Add a valid email, like name@mail.com.'};
 const SEO={"home": ["Temomi | Social Wellness Club for Ice Baths, Saunas & Recovery", "Temomi is a social wellness club with private ice baths, saunas, red light beds and recovery rooms you can book alone or with friends."], "locations": ["Our Clubs | Old Town, Skyline & Parkside | Temomi", "Visit a Temomi club: Old Town, Skyline or Parkside. Private ice baths, saunas and lounges for you and your friends."], "remedies": ["Remedies: Ice Bath, Sauna, Red Light & Recovery | Temomi", "Browse every Temomi remedy: guided ice baths, sauna suites, red light, lymphatic compression, acupuncture, IV lounge and testing."], "membership": ["Memberships & Pricing | Temomi", "Compare Temomi membership plans, from pay-per-visit to unlimited ice bath and sauna, and read answers to common questions."], "about": ["About Temomi | Wellness Built Around Friends", "Temomi started as a single plunge pool and a group chat. Learn how we choose remedies and design our clubs."], "book": ["Book a Remedy | Temomi", "Reserve an ice bath, sauna, red light bed or recovery room at a Temomi club for yourself or a group of up to six."]};
 function seo(p){const s=SEO[p];document.title=s[0];$('meta[name=description]').content=s[1];$('meta[property="og:title"]').content=s[0];$('meta[property="og:description"]').content=s[1];$('#nav').classList.remove('open');$('#mb').setAttribute('aria-expanded',false)}
 $('#mb').onclick=()=>{const o=$('#nav').classList.toggle('open');$('#mb').setAttribute('aria-expanded',o)};
 // motion
-const S='.hero p,.hero .btn,.facts>div,.sig>*,.steps>div,.sh,.faq details,.two>*,.loc,.tier,.club,.stage,form,.cmp,.cap,.chips,#vals>div,.rem li,.tog';
+const S='.nr',S0='.hero p,.hero .btn,.facts>div,.sig>*,.steps>div,.sh,.faq details,.two>*,.loc,.tier,.club,.stage,form,.cmp,.cap,.chips,#vals>div,.rem li,.tog';
 const io=new IntersectionObserver(es=>{es.filter(e=>e.isIntersecting).forEach((e,i)=>{io.unobserve(e.target);gsap.to(e.target,{opacity:1,y:0,duration:.9,delay:i*.1,ease:'power3.out',clearProps:'transform'})})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('h1').forEach(h=>{h.innerHTML=h.textContent.trim().split(' ').map(w=>`<span class="w"><span>${w}</span></span>`).join(' ')});
 function enter(el){if(RM)return;const h=el.querySelector('h1');
@@ -214,5 +265,8 @@ const a=[...el.querySelectorAll(S)],els=a.filter(e=>!a.some(x=>x!==e&&x.contains
 if(!RM){gsap.registerPlugin(ScrollTrigger);
 gsap.to('#pg',{scaleX:1,ease:'none',scrollTrigger:{start:0,end:'max',scrub:.3}});
 new IntersectionObserver((e,ob)=>{if(!e[0].isIntersecting)return;ob.disconnect();const o={v:50},u=()=>{rng.value=o.v;cmp()};gsap.timeline({delay:.4}).to(o,{v:80,duration:1,ease:'power2.inOut',onUpdate:u}).to(o,{v:30,duration:1.4,ease:'power2.inOut',onUpdate:u}).to(o,{v:50,duration:.9,ease:'power2.inOut',onUpdate:u})},{threshold:.6}).observe($('.cmp'))}
+$('#hc').innerHTML=C.map(c=>`<option>${c.n}</option>`).join('');$('#hr').innerHTML=R.map(r=>`<option>${r[0]}</option>`).join('');
+const sync=()=>{$('#hb').dataset.club=$('#hc').value;$('#hb').dataset.remedy=$('#hr').value};$('#hc').onchange=$('#hr').onchange=sync;sync();
+$('#why').innerHTML=V.map(v=>`<div><h3>${v[0]}</h3><p class="mute">${v[1]}</p></div>`).join('');
 addEventListener('hashchange',()=>go(location.hash.slice(1)));go(location.hash.slice(1)||'home');
 </script></body></html>
