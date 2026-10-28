@@ -1,0 +1,18 @@
+# Temomi Home Massage
+
+> 24/7 home service massage in Metro Manila, Philippines. A therapist comes to your home, condo or hotel room. 2 hours of massage from ₱999.
+
+- Massage types: Swedish, Shiatsu, Thai, Combination, Foot Massage
+- Service areas: Pasay, Parañaque, Makati, Mandaluyong, BGC, Ortigas Bungad (Metro Manila). Other areas on request.
+- Hours: open 24 hours, 7 days a week
+- Price: from ₱999 for 2 hours. Final rate depends on massage type and location and is confirmed before the therapist leaves. No hidden fees.
+- Booking: call, WhatsApp or Viber 0956 125 6880 (+63 956 125 6880). No app or account needed.
+
+## Pages
+
+- [Home](https://temomimassage.services/): overview, massage styles and how booking works
+- [Services](https://temomimassage.services/services.html): description of each massage style
+- [Pricing](https://temomimassage.services/pricing.html): rates for each massage
+- [Service areas](https://temomimassage.services/areas.html): where we go in Metro Manila
+- [FAQ](https://temomimassage.services/faq.html): hours, areas, rates, payment and booking
+- [Book](https://temomimassage.services/book.html): booking form that sends to WhatsApp or Viber
